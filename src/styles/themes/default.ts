@@ -1,17 +1,20 @@
 export const defaultTheme = {
   colors: {
     white: '#ffffff',
-    primary: '#8257e6',
-    secondary: '#04d361',
-    background: '#121214',
-    text: '#e1e1e6',
-    border: '#202024',
-    inputBackground: '#202024',
-    inputText: '#c4c4cc',
+    primary: '#3294F8',
+    title: '#e7edf4',
+    subtitle: '#c4d4e3',
+    text: '#AFC2D4',
+    span: '#7B96B2',
+    label: '#3A536B',
+    border: '#1C2F41',
+    basePost: '#112131',
+    baseProfile: '#0B1B2B',
+    baseBackground: '#071422',
+    baseInput: '#040F1A',
   },
   fonts: {
     body: 'Roboto, sans-serif',
-    heading: 'Poppins, sans-serif',
   },
   breakpoints: {
     mobile: '768px',

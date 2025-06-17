@@ -4,7 +4,7 @@ import { GlobalStyle } from "./styles/global"
 export function App() {
 
   return (
-    <ThemeProvider theme={{defaultTheme}}>
+    <ThemeProvider theme={defaultTheme}>
       <GlobalStyle />
       <h1>Github Blog</h1>
     </ThemeProvider>
