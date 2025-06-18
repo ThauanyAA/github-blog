@@ -59,5 +59,5 @@ npm run dev
 
 ## 📌 Desafio proposto por:
 
-[Rocketseat - Ignite React 2025](https://rocketseat.com.br/ignite)
+[Rocketseat - Ignite React 2021](https://rocketseat.com.br/ignite)
 
