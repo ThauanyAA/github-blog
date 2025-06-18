@@ -1,54 +1,63 @@
-# React + TypeScript + Vite
+# 🚀 Desafio 03 - GitHub Blog
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este projeto é parte do curso **Ignite React** da [Rocketseat](https://rocketseat.com.br), e foi desenvolvido como solução para o **Desafio 03: GitHub Blog**. O objetivo é criar uma aplicação que consome dados da API do GitHub e exibe publicações como se fosse um blog técnico.
 
-Currently, two official plugins are available:
+<!-- ## 📸 Preview
+ -->
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🧩 Funcionalidades
 
-## Expanding the ESLint configuration
+* Listagem de publicações a partir de issues de um repositório no GitHub
+* Visualização de detalhes de uma publicação
+* Busca por publicações utilizando a API do GitHub
+* Estilização com base em um layout fornecido (Figma)
+* Perfil do autor com avatar, bio, GitHub e Rocketseat
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🛠️ Tecnologias utilizadas
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+* [React](https://reactjs.org/)
+* [TypeScript](https://www.typescriptlang.org/)
+* [Vite](https://vitejs.dev/)
+* [React Router Dom](https://reactrouter.com/)
+* [Axios](https://axios-http.com/)
+* [Styled Components](https://styled-components.com/) ou outro CSS-in-JS (ajuste conforme usado)
+* [Phosphor Icons](https://phosphoricons.com/)
+
+## 🔍 Como funciona
+
+A aplicação consome dados da API pública do GitHub para listar issues de um repositório específico, funcionando como um blog. O conteúdo da issue representa o conteúdo de uma postagem.
+
+* O título da issue = título da publicação
+* O corpo da issue = conteúdo da publicação
+* A data de criação = data da publicação
+* A busca usa `GET /search/issues?q=...` para filtrar posts
+
+## 🖥️ Rodando localmente
+
+```bash
+# Clone o repositório
+git clone https://github.com/sua-usuaria/github-blog
+
+# Acesse a pasta
+cd github-blog
+
+# Instale as dependências
+npm install
+
+# Inicie o servidor
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+> A aplicação estará disponível em `http://localhost:5173`
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 📁 Organização
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+* `src/pages`: páginas da aplicação (Home, Post)
+* `src/components`: componentes reutilizáveis (Header, ProfileCard, PostCard etc.)
+* `src/services`: configuração do Axios e chamadas à API
+* `src/styles`: temas globais e estilos
+
+## 📌 Desafio proposto por:
+
+[Rocketseat - Ignite React 2025](https://rocketseat.com.br/ignite)
+
