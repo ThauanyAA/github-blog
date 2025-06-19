@@ -19,7 +19,7 @@ export function PostCard({ post }: PostCardProps) {
   })
 
   return (
-    <Link to={`/post/${post.number}`}>
+    <Link to={`/posts/${post.number}`}>
       <PostCardContainer>
         <header>
           <h4>{post.title}</h4>

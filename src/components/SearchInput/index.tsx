@@ -1,4 +1,4 @@
-import { useState, type FormEvent } from 'react'
+import { useEffect, useState } from 'react'
 import { SearchContainer } from './styles'
 
 interface SearchInputProps {
@@ -9,13 +9,16 @@ interface SearchInputProps {
 export function SearchInput({ onSearch, postsLength }: SearchInputProps) {
   const [query, setQuery] = useState('')
 
-  function handleSearch(event: FormEvent) {
-    event.preventDefault()
-    onSearch(query)
-  }
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      onSearch(query)
+    }, 500) // 500ms debounce
+
+    return () => clearTimeout(timeoutId)
+  }, [query, onSearch])
 
   return (
-    <SearchContainer onSubmit={handleSearch}>
+    <SearchContainer>
       <header>
         <h3>Publicações</h3>
         <span>{postsLength} publicações</span>

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { ProfileCard } from "../../components/ProfileCard";
 import { SearchInput } from "../../components/SearchInput";
 import { HomeContainer, NoResults, PostList } from "./styles";
@@ -16,25 +16,30 @@ interface Post {
 export function Home() {
   const [posts, setPosts] = useState<Post[]>([])
 
-  async function fetchPosts(query = '') {
-    const response = await api.get('/search/issues', {
-      params: {
-        q: `${query} repo:ThauanyAA/github-blog`,
-      },
-    })
+  const fetchPosts = useCallback(async (query = '') => {
+  const cleanQuery = query.trim()
+  const searchQuery = cleanQuery.length > 0
+    ? `${cleanQuery} repo:thauanyAA/github-blog`
+    : `repo:thauanyAA/github-blog`
 
-    setPosts(response.data.items)
-  }
+  const response = await api.get('/search/issues', {
+    params: {
+      q: searchQuery,
+    },
+  })
+
+  setPosts(response.data.items)
+}, [])
 
   useEffect(() => {
     fetchPosts()
-  }, [])
+  }, [fetchPosts])
   
   return (
     <HomeContainer>
       <ProfileCard />
       <SearchInput
-        onSearch={() => {}}
+        onSearch={fetchPosts}
         postsLength={posts.length} 
       />
       {posts.length > 0 ? (
