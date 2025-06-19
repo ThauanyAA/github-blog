@@ -1,10 +1,15 @@
 import { ProfileCard } from "../../components/ProfileCard";
+import { SearchInput } from "../../components/SearchInput";
 import { HomeContainer, PostList } from "./styles";
 
 export function Home() {
   return (
     <HomeContainer>
       <ProfileCard />
+      <SearchInput
+        onSearch={() => {}}
+        postsLength={3} 
+      />
       <PostList>
         <article>
           <h2>Post Title 1</h2>
