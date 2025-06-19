@@ -13,3 +13,26 @@ export const PostList = styled.section`
   gap: 2rem;
   margin-top: 3rem;
 `
+
+export const NoResults = styled.div`
+  margin-top: 3rem;
+  text-align: center;
+  color: ${({ theme }) => theme.colors.label};
+
+  p {
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+
+  span {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+  }
+
+  svg {
+    margin-bottom: 1rem;
+    color: ${({ theme }) => theme.colors.label};
+  }
+
+`
