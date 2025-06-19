@@ -1,9 +1,10 @@
+import { ProfileCard } from "../../components/ProfileCard";
 import { HomeContainer, PostList } from "./styles";
 
 export function Home() {
   return (
     <HomeContainer>
-      <h1>Home</h1>
+      <ProfileCard />
       <PostList>
         <article>
           <h2>Post Title 1</h2>
